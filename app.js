@@ -97,6 +97,7 @@ $(function () {
     }
 
     function displayMessage(message, sender, type) {
+        var messages = document.querySelector('#messages');
         if (type === 'action') {
             $('#messages').append(`<div class="message-panel">
     <div class="user">
@@ -124,6 +125,7 @@ $(function () {
     <div class="time">${getTime()}</div>
 </div>`);
         }
+        messages.scrollTop = messages.scrollHeight;
     }
 
     function getCachedIcon(name) {
